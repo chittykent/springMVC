@@ -1,0 +1,26 @@
+body{font-size: 14px;color: #0f4d74;	background-image: url(../images/zc_07.gif);	background-repeat: repeat-x;}
+.b6{margin-left: 2px;background-image: url(../images/zc_03.gif);background-repeat: no-repeat;padding-left: 15px;background-position: left center;}
+.wrap{width:800px;margin: 0 auto;}
+.title{line-height:55px;	font-size: 20px;color:#fff;font-family: "Microsoft YaHei" text-shadow:1px 1px rgba(0,0,0,.3)height: 55px;margin-top: 20px; }
+.main{margin-top:20px;padding: 20px;height: 400px;}
+.main2{ margin-top:20px;padding: 20px;height: 500px;}
+.font1{	font-size: 14px;color:darkorange;font-weight:bold;	margin-bottom: 20px;padding-left: 20px;text-align: left center;background-image: url(../images/dot.gif);background-repeat: no-repeat;	background-position: left center;}
+.font2{margin-left: 340px;margin-bottom: 30px;}
+.font3{margin-left: 265px;}
+.font4{padding-left: 60px;line-height:30px;}
+.font5{padding-left: 88px;line-height:30px;}
+.font6{color:#ff0000;font-weight:bold;line-height:30px;margin-right: 5px;background-position:center}
+.font7{	padding-left: 86px;line-height:30px;vertical-align: top;}
+.font8{padding-left: 74px;line-height:30px;}
+.font9{padding-left: 47px;line-height:30px;;}
+.font10{font-size: 14px;color:darkorange;font-weight:bold;margin-bottom: 20px;padding-left: 20px;text-align: left center;background-image: url(../images/dot.gif);background-repeat: no-repeat;background-position: left center;}
+.font11{margin-left: 120px;margin-top: 10px;}
+.font12{padding-left: 86px;line-height:30px;}
+.field2{width: 285px;height: 30px;line-height:30px;color: #939292;	background: #f7fcff;border: 1px solid #74b4ef;margin-bottom: 10px;padding:2px;}
+a:link{ color: #0f4d74; text-decoration: none;}
+a:visited{color: #0f4d74; text-decoration:underline;}
+a:hover{color: #ff5a00;text-decoration:underline;}
+.foot{font-size: 12px;color: #6d6d6d;text-align: center;}
+.font10 a:link{ color:darkorange; text-decoration: none;text-decoration:underline;}
+.font10 a:visited{color:darkorange; text-decoration:underline;text-decoration:underline;}
+.font10 a:hover{color: #939292;text-decoration:underline;text-decoration: none;}

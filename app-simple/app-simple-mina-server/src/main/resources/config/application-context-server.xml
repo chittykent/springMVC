@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+	    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+       
+	  <!-- This makes it possible to specify java.net.SocketAddress values 
+	    (e.g. :1234 below) as Strings.
+	    They will be converted into java.net.InetSocketAddress objects by Spring.  -->
+	   <!-- 构造属性编辑器 -->
+	  <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	    <property name="customEditors">
+	      <map>
+	        <entry key="java.net.SocketAddress" value="org.apache.mina.integration.beans.InetSocketAddressEditor" >
+        		</entry>
+	      </map>
+	    </property>
+	  </bean>
+	
+  
+	<!-- 构造协议编解码过滤器 -->
+	<bean id="snmpEncoder" class="com.app.simple.mina.server.code.SNMPEncoder"></bean>
+	<bean id="snmpDecoder" class="com.app.simple.mina.server.code.SNMPDecoder"></bean>
+	<bean id="codecFilter" class="org.apache.mina.filter.codec.ProtocolCodecFilter">
+		<constructor-arg>
+			<bean class="com.app.simple.mina.server.code.SNMPCodecFactory">
+      			<property name="snmpEncoder" ref="snmpEncoder"></property>
+				<property name="snmpDecoder" ref="snmpDecoder"></property>
+			</bean>
+		</constructor-arg>
+	</bean>
+       
+	<!-- 构造日志过滤器 -->
+	<bean id="loggingFilter" class="org.apache.mina.filter.logging.LoggingFilter" />
+  
+	<!-- 构造过滤器链-->
+	<bean id="filterChainBuilder" class="org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder">
+		<property name="filters">
+			<map>
+				<entry key="loggingFilter" value-ref="loggingFilter" />
+				<entry key="codecFilter" value-ref="codecFilter" />
+			</map>
+		</property>
+	</bean>
+	
+	
+  	
+  	<!-- UDP Server -->
+  	<bean id="udpServer" class="com.app.simple.mina.server.udp.UDPServer">
+  	<!--	<property name="memcachedClient" ref="memcachedClient"></property>-->
+  	</bean>     
+  	
+  	<!-- 构造UDP Server端-->
+	<bean id="udpIoAcceptor" class="org.apache.mina.transport.socket.nio.NioDatagramAcceptor" init-method="bind" destroy-method="unbind">
+		<property name="defaultLocalAddress" value=":3088" />
+		<property name="handler" ref="udpServer" />
+		<property name="filterChainBuilder" ref="filterChainBuilder" />
+	</bean>
+	
+	
+  	<!-- TCP Server -->
+  	<bean id="tcpServer" class="com.app.simple.mina.server.tcp.TCPServer">
+  		
+  	</bean>     
+  	<!-- 构造TCP Server端-->
+	<bean id="tcpIoAcceptor" class="org.apache.mina.transport.socket.nio.NioSocketAcceptor" init-method="bind" destroy-method="unbind">
+		<property name="defaultLocalAddress" value=":3086" />
+		<property name="handler" ref="tcpServer" />
+		<property name="filterChainBuilder" ref="filterChainBuilder" />
+	</bean>
+  	
+  
+  
+
+</beans>

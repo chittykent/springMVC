@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Reset 
+/*-----------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+/* General Setup
+/*-----------------------------------------------------------------------------------*/
+html{ height:100%;}
+body{margin:0 auto;height: 100%;position: relative; color:#626262;  background:#fff;}
+a, span.tag{ text-decoration:none;}
+a:link,a:visited,a:active{ color:#333}
+a:hover{ color:#1193ab; text-decoration:underline}
+
+
+/* Headings
+/*------------------------------------------*/
+h1, h2, h3, h4, h5, h6{font-weight:normal; margin:0px;padding:10px 0 20px 0;clear:both; letter-spacing:-1px;}
+h1{ font-size:30px;}
+h2{ font-size:26px;}
+h3{ font-size:22px;}
+h4{ font-size:18px;}
+h5{ font-size:14px;}
+h6{ font-size:12px;}
+
+
+
+#loginContent{ width:840px; height:328px; margin-left:-420px; margin-top:-164px; left:50%; top:50%; position:relative}
+.loginFrame{ background:url(../images/login_content.gif) no-repeat; height:270px; width:100%}
+.loginFrame .login{ float:right; width:282px;margin-right:24px; display:inline; margin-top:42px;}
+.loginFrame .login ul li{ margin-bottom:22px; height:35px}
+.loginFrame .login ul li.heightAuto{ height:41px; overflow:hidden}
+.userName,.pwd{ width:188px; float:left; height:24px;border:1px solid #94c3cc; overflow:hidden; background:#fff; line-height:24px; font-size:14px; padding:3px 10px;}
+.loginFrame .login ul li span{ float:left; line-height:28px; width:65px; font-size:16px; text-align:right;}
+.loginBtn{ font-family: 'Microsoft Yahei'; cursor:pointer; background:url(../images/loginBtn.gif) no-repeat; width:105px; height:41px; line-height:40px; font-size:18px; border:none; color:#fff; margin-left:28px; display:inline-block;}
+.cancelBtn{font-family: 'Microsoft Yahei'; background:url(../images/cancelBtn.gif) no-repeat; width:105px; height:41px; line-height:40px; font-size:18px; border:none;margin-left:28px; display:inline-block;cursor:pointer;}
+.loginFrame .login ul li a{ font-size:14px; display:inline-block; margin-left:55px; font-family:"宋体"}
